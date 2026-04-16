@@ -100,7 +100,8 @@ export default function Projects() {
               {/* 3. LINIA DE DELIMITARE (Apare doar pe mobil și NU la ultimul proiect) */}
               {index !== projects.length - 1 && (
                 <div className="md:hidden mt-20 flex justify-center w-full">
-                  <div className="h-px w-full max-w-[200px] bg-gradient-to-r from-transparent via-slate-800 to-transparent"></div>
+                  {/* Am modificat max-w-[320px] și via-cyan-500/40 */}
+                  <div className="h-px w-full max-w-[320px] bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"></div>
                 </div>
               )}
 
