@@ -47,6 +47,7 @@ export default function Projects() {
               className="relative flex flex-col md:flex-row items-center bg-transparent rounded-3xl overflow-hidden group"
             >
               
+              {/* Partea Stângă: Detalii Proiect */}
               <div className="w-full md:w-1/2 p-8 md:p-12 z-20">
                 <h3 className="text-sm font-mono text-cyan-500 mb-2 uppercase tracking-widest">
                   Featured Project
@@ -54,38 +55,26 @@ export default function Projects() {
                 <h4 className="text-4xl font-bold mb-6 group-hover:text-cyan-400 transition-colors">
                   {project.title}
                 </h4>
-                {/* AM SCOS 'border border-slate-700' de aici */}
+                
                 <div className="bg-[#0f172a]/60 backdrop-blur-md p-6 rounded-xl shadow-2xl mb-6 md:-mr-20 relative z-30">
                   <p className="text-gray-300 leading-relaxed text-lg">
                     {project.description}
                   </p>
                 </div>
+
                 <div className="flex flex-wrap gap-3 font-mono text-xs text-gray-400">
                   {project.tech.map(t => (
-                    /* AM SCOS 'border border-slate-700' și de la skill-uri */
                     <span key={t} className="bg-slate-800/50 px-3 py-1 rounded-full">
                       {t}
                     </span>
                   ))}
                 </div>
-              </div>
 
-              {/* Partea Dreaptă: Imagine + Fade + Buton */}
-              <div className="w-full md:w-1/2 relative h-[350px] md:h-[500px] overflow-hidden rounded-2xl">
-                {/* Gradientul de Fade */}
-                <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent hidden md:block" />
-                
-                <Image 
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover object-top grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                />
-
-                <div className="absolute bottom-8 right-8 z-20">
+                {/* BUTONUL ESTE MUTAT AICI */}
+                <div className="mt-10">
                   <Link 
                     href={`/projects/${project.slug}`}
-                    className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-6 py-3 rounded-full font-bold transition-all transform hover:scale-110 shadow-xl"
+                    className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(8,145,178,0.2)]"
                   >
                     View Project
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -94,6 +83,19 @@ export default function Projects() {
                   </Link>
                 </div>
               </div>
+
+              {/* Partea Dreaptă: Imagine + Fade */}
+              <div className="w-full md:w-1/2 relative h-[350px] md:h-[500px] overflow-hidden rounded-2xl">
+                <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent hidden md:block" />
+                
+                <Image 
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover object-top grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                />
+              </div>
+
             </motion.div>
           ))}
         </div>
