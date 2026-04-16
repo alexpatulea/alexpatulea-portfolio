@@ -74,7 +74,7 @@ export default function Projects() {
                 <div className="mt-10">
                   <Link 
                     href={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(8,145,178,0.2)]"
+                    className="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-xl w-full sm:w-auto justify-center"
                   >
                     View Project
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
